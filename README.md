@@ -22,7 +22,7 @@ The `$generator->generate()` method accepts the following parameters:
 - `$totalHeight` (default: 30) The total height of the barcode
 - `$color` (default: #000000) Hex code of the foreground color
 
-- ## Examples
+## Examples
 Embedded SVG image in HTML:
 
 ```php
