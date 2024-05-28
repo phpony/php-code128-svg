@@ -4,7 +4,7 @@ Simple single file class to generate Code 128 barcode as SVG image that works wi
 *The codebase is largely from the [php-barcode-generator](https://github.com/brewerwall/php-barcode-generator) downported to support php 5.3 and tinyfied to single file with single class approach only with Code 128 barcode and SVG format in mind.*
 
 ## Usage
-Require single class file code128.php and create a new barcode generator:
+Download and put code128.php anywhere, require this file once and create a new barcode generator:
 
 ```php
 require_once("code128.php");
