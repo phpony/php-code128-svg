@@ -8,9 +8,12 @@ Download and put code128.php anywhere, require this file once and create a new b
 
 ```php
 require_once("code128.php");
+
 $generator = new code128();
+
 // Generate our code
 $generated = $generator->generate('012345678');
+
 // Generates the same code with style updates
 $generated = $generator->generate('012345678', '', 4, 50, '#FFCC33');
 ```
@@ -22,10 +25,15 @@ The `$generator->generate()` method accepts the following parameters:
 - `$totalHeight` (default: 30) The total height of the barcode
 - `$color` (default: #000000) Hex code of the foreground color
 
-## Examples
-Embedded SVG image in HTML:
-
+The `$generated` will have SVG code that can be used in multiple ways:
 ```php
-$generator = new code128();
-echo '<img src="data:image/svg+xml;base64,' . base64_encode($generator->generate('012345678')) . '">';
+// Write into file
+file_put_contents("barcode.svg", $generated);
+
+// Display directly
+header('Content-type: image/svg+xml');
+echo $generated;
+
+// Embed as image into HTML
+echo '<img src="data:image/svg+xml;base64,' . base64_encode($generated) . '">';
 ```
